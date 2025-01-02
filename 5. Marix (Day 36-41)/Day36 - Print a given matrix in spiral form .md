@@ -63,28 +63,6 @@ You are given a rectangular matrix `mat[][]` of size `n x m`. Your task is to re
 
 ## 📝 **Solution Code**
 
-## Code (C)
-
-```c
-void spirallyTraverse(int** mat, int r, int c) {
-    int top = 0, left = 0, bottom = r - 1, right = c - 1;
-
-    while (top <= bottom && left <= right) {
-        for (int i = left; i <= right; printf("%d ", mat[top][i++]));
-        top++;
-        for (int i = top; i <= bottom; printf("%d ", mat[i++][right]));
-        right--;
-        if (top <= bottom)
-            for (int i = right; i >= left; printf("%d ", mat[bottom][i--]));
-        bottom--;
-        if (left <= right)
-            for (int i = bottom; i >= top; printf("%d ", mat[i--][left]));
-        left++;
-    }
-    printf("\n");
-}
-```
-
 ## Code (C++)
 
 ```cpp
@@ -149,70 +127,3 @@ public:
 </details>
 
 
-## Code (Java)
-
-```java
-class Solution {
-    public ArrayList<Integer> spirallyTraverse(int[][] mat) {
-        ArrayList<Integer> result = new ArrayList<>();
-        int top = 0, left = 0, bottom = mat.length - 1, right = mat[0].length - 1;
-
-        while (top <= bottom && left <= right) {
-            for (int i = left; i <= right; i++) result.add(mat[top][i]);
-            top++;
-            for (int i = top; i <= bottom; i++) result.add(mat[i][right]);
-            right--;
-            if (top <= bottom)
-                for (int i = right; i >= left; i--) result.add(mat[bottom][i]);
-            bottom--;
-            if (left <= right)
-                for (int i = bottom; i >= top; i--) result.add(mat[i][left]);
-            left++;
-        }
-        return result;
-    }
-}
-```
-
-## Code (Python)
-
-```python
-class Solution:
-    def spirallyTraverse(self, mat):
-        result = []
-        top, left, bottom, right = 0, 0, len(mat) - 1, len(mat[0]) - 1
-
-        while top <= bottom and left <= right:
-            for i in range(left, right + 1):
-                result.append(mat[top][i])
-            top += 1
-            for i in range(top, bottom + 1):
-                result.append(mat[i][right])
-            right -= 1
-            if top <= bottom:
-                for i in range(right, left - 1, -1):
-                    result.append(mat[bottom][i])
-                bottom -= 1
-            if left <= right:
-                for i in range(bottom, top - 1, -1):
-                    result.append(mat[i][left])
-                left += 1
-
-        return result
-```
-
-## 🎯 **Contribution and Support:**
-
-For discussions, questions, or doubts related to this solution, feel free to connect on LinkedIn: [Any Questions](https://www.linkedin.com/in/het-patel-8b110525a/). Let’s make this learning journey more collaborative!
-
-⭐ If you find this helpful, please give this repository a star! ⭐
-
----
-
-<div align="center">
-  <h3><b>📍Visitor Count</b></h3>
-</div>
-
-<p align="center">
-  <img src="https://profile-counter.glitch.me/Hunterdii/count.svg" />
-</p>
